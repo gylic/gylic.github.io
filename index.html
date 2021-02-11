@@ -383,6 +383,7 @@
     </span>
 </div>
 
+            <div class="post-description">这是显示在首页的概述，正文内容均会被隐藏。</div>
         </div>
       </header>
 
@@ -390,15 +391,115 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>这是显示在首页的概述，正文内容均会被隐藏。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>[toc]</p>
+<p><strong>题型：</strong> 分析题30 简答题40 应用题30 (写程序10分) .</p>
+<p>今年比较特殊，好像题比往年简单，然而我还是感到头秃。</p>
+<h2 id="第1章">第1章</h2>
+<p><strong>计算时间复杂度</strong></p>
+<p><img src="https://img2020.cnblogs.com/blog/2023220/202006/2023220-20200619194856960-363594173.png" /></p>
+<p><strong>注意：</strong></p>
+<p>一个语句本身的程序步数可能不等于该语句一次 执行所具有的程序步数。<br />
+例如：赋值语句 x = sum (R, n) 赋值操作的程序步数为 1；<br />
+一次执行对函数 sum (R, n) 的调用需要的程序步 数为 2 * n+3； 一次执行的程序步数为 1+2 * n+3 = 2 * n+4</p>
+<p><strong>大O的表示方法</strong></p>
+<p>T(n) = O(f(n)) 称f(n)为算法的“渐进”时间复杂度 ,简称时间复杂度，以简化算法复杂性的分析。 说明：在计算算法时间复杂度时，可以忽略所有低次幂和最高次幂的系数。</p>
+<p><strong>大O的运算规则</strong></p>
+<p>• 加法准则(并列程序段 )<br />
+前提：<span class="math inline">\(T_1\)</span>(m) = O(f(m)); <span class="math inline">\(T_2\)</span>(n) = O(g(n))<br />
+结论：<span class="math inline">\(T\)</span>(n)= <span class="math inline">\(T_1\)</span>+<span class="math inline">\(T_2\)</span> = O(f(n)+g(n))<br />
+<span class="math inline">\(T\)</span>(n) = <span class="math inline">\(T_1\)</span>+<span class="math inline">\(T_2\)</span> = O(max(f(m),g(n))) • 乘法准则(嵌套程序段)<br />
+前提：<span class="math inline">\(T_1\)</span>(n) = O(f(n)); <span class="math inline">\(T_2\)</span>(n) = O(g(n))<br />
+结论：<span class="math inline">\(T\)</span>(n) = <span class="math inline">\(T_1\)</span>* <span class="math inline">\(T_2\)</span> = O(f(n)*g(n))</p>
+<p><strong>常见函数的增长率</strong></p>
+<p><img src="https://img2020.cnblogs.com/blog/2023220/202006/2023220-20200619194940245-829728112.png" /></p>
+<p><strong>例1</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exam</span> <span class="params">( <span class="keyword">float</span> x[ ][ ], <span class="keyword">int</span> m, <span class="keyword">int</span> n )</span> </span>&#123;      </span><br><span class="line">  <span class="keyword">float</span> sum [ ];      </span><br><span class="line">  <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++ ) &#123; <span class="comment">//x中各行          </span></span><br><span class="line">     sum[i] = <span class="number">0.0</span>; <span class="comment">//数据累加          </span></span><br><span class="line">     <span class="keyword">for</span> ( <span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++ )       </span><br><span class="line">         sum[i] += x[i][j];      </span><br><span class="line">  &#125;      </span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; m; i++ )  <span class="comment">//打印各行数据和          </span></span><br><span class="line">     <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; “ : ” &lt;&lt;sum [i] &lt;&lt; <span class="built_in">endl</span>;  </span><br><span class="line">&#125;         </span><br><span class="line"><span class="comment">//渐进时间复杂度为 O(max (m*n, m))</span></span><br></pre></td></tr></table></figure>
+<p><strong>例2</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n )</span> </span>&#123; </span><br><span class="line"><span class="comment">//用冒泡排序方法，将a 中n个整数的序列排列成自小至大有序的整数序列。  </span></span><br><span class="line">    <span class="keyword">int</span> change ,i; </span><br><span class="line">    <span class="keyword">for</span> (i = n<span class="number">-1</span>,change=<span class="number">1</span>; i &gt;=<span class="number">1</span>&amp;&amp;change; - -i )&#123;     </span><br><span class="line">        change= <span class="number">0</span>;    </span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j&lt;i; ++j )     </span><br><span class="line">        <span class="keyword">if</span> (a [j] &gt;a[ j+<span class="number">1</span>]) &#123;           </span><br><span class="line">           a [j]&lt;-&gt;a[ j+ <span class="number">1</span>]                     </span><br><span class="line">           change=<span class="number">1</span>;&#125;         </span><br><span class="line">               &#125; </span><br><span class="line">&#125;<span class="comment">// bubble_sort</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//基本操作：赋值操作。时间复杂度：O(n^2)--最坏情况下时间复杂度 </span></span><br></pre></td></tr></table></figure>
+<p>BubbleSort n-1趟 BubbleExchange ( ) n-i次比较</p>
+<p>当输入的数据已经排好序， 只要比较n-1次， 当输入的数据是减序，需要 比较n(n-1)/2次。</p>
+<p><strong>递归时间复杂度分析</strong>、</p>
+<p>104 hanoi</p>
+<h2 id="第23章">第2、3章</h2>
+<p><strong>线性结构:</strong></p>
+<p>1.栈和队列</p>
+<p>栈pop，push 91</p>
+<p>队列原理115，Enqueue，Dequeue117</p>
+<p>2.栈序列</p>
+<p>卡特兰数另类递推式： h(n)=h(n-1) * (4*n-2)/(n+1);</p>
+<p>3.栈、队列的边界条件</p>
+<p>初始top=-1，最大top=maxsize-1</p>
+<p>初始front=rear=0，最后（rear+1）%maxsize == front队满，front== rear队空。</p>
+<p>4.双向循环链的基本操作</p>
+<p>搜索71，插入72，删除73</p>
+<p>双向循环链表中，P指针所指向的结点的前驱指针域和后继指针域分别用prior和next表示，删除P指针所指向的结点，则其基本操作为p-&gt;prior-&gt;next=p-&gt;next, p-&gt;next-&gt;prior=p-&gt;prior, free(p)。</p>
+<p>5.循环队列的判空判满操作</p>
+<p>请描述在循环队列中，（队列用Q表示，队头和队尾指针分别由front和rear表示，该队列有MS个存储空间），判断队空和队满的条件分别分：Q.front== Q.rear, Q.front==（Q.rear+1）% MS 。</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gylic/p/12809962.html">数据结构第二章笔记</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gylic/p/12902165.html">数据结构第三章笔记</a></p>
+<h2 id="第4章">第4章</h2>
+<p><strong>一维数组求地址</strong></p>
+<p><img src="https://img2020.cnblogs.com/blog/2023220/202006/2023220-20200619195041797-1722663588.png" /></p>
+<p><img src="https://img2020.cnblogs.com/blog/2023220/202006/2023220-20200619195051213-2137226933.png" /></p>
+<p>递推式 <span class="math inline">\(LOC ( i ) = LOC ( i -1 ) + l =α+ i*l\)</span></p>
+<p><strong>二维数组求地址</strong></p>
+<p>n行m列的二维数组：</p>
+<p><img src="https://img2020.cnblogs.com/blog/2023220/202006/2023220-20200619195142158-1259005485.png" /></p>
+<p>行优先 <span class="math inline">\(LOC ( j, k ) = a + ( j * m + k ) * l\)</span></p>
+<p><strong>n维数组</strong></p>
+<p>各维元素个数为 <span class="math inline">\(m_1\)</span>, <span class="math inline">\(m_2\)</span>, <span class="math inline">\(m_3\)</span>, …, <span class="math inline">\(m_n\)</span></p>
+<p>下标为 <span class="math inline">\(i_1\)</span>, <span class="math inline">\(i_2\)</span>, <span class="math inline">\(i_3\)</span>, …, <span class="math inline">\(i_n\)</span> 的数组元素的存储地址：</p>
+<p><span class="math inline">\(LOC\)</span> ( <span class="math inline">\(i_1\)</span>, <span class="math inline">\(i_2\)</span>, …, <span class="math inline">\(i_n\)</span> ) = a +</p>
+<p>( <span class="math inline">\(i_1\)</span>* <span class="math inline">\(m_2\)</span>* <span class="math inline">\(m_3\)</span>* …* <span class="math inline">\(m_n\)</span> + <span class="math inline">\(i_2\)</span>* <span class="math inline">\(m_3\)</span>* <span class="math inline">\(m_4\)</span>* …* <span class="math inline">\(m_n\)</span>+……+ <span class="math inline">\(i_{n-1}\)</span><em><span class="math inline">\(m_n\)</span> + <span class="math inline">\(i_n\)</span> ) </em> l</p>
+<p>=a+( <span class="math inline">\(\sum_{j=1}^{n-1}\)</span><span class="math inline">\(i_j\)</span> <em><span class="math inline">\(\prod_{k=j+1}^{n}\)</span><span class="math inline">\(m_k\)</span>+<span class="math inline">\(i_n\)</span>) </em>l</p>
+<p>例题：</p>
+<p>有6行8列的二维数组A，每个元素用相邻的6个字节存储，存储器按字节编址，已知A的起始存储地址（基址）为1000，在行优先存储和列优先存贮情况下A[5,5]的存储地址分别为 1270 , 1210 。</p>
+<h2 id="第5章">★第5章</h2>
+<p><strong>树（要求代码）：</strong></p>
+<p>树的特性(知道其推导过程) 树的遍历(深度和层次遍历及其应用)</p>
+<p>199递归遍历；205层次遍历用到队列。</p>
+<p>二叉树的建立(先根和后根序列确定一棵树)</p>
+<p>202建树，208确定树</p>
+<p>树和二叉树的转换 堆</p>
+<p>235</p>
+<p>哈夫曼树及编码</p>
+<p>241，245</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gylic/p/13040922.html">数据结构第五章笔记</a></p>
+<h2 id="第6章">第6章</h2>
+<p><strong>集合：</strong></p>
+<p>散列表:创建和冲突检测、查找长度( 成功和非成功)</p>
+<p>、285</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gylic/p/13141930.html">数据结构第六章笔记</a></p>
+<h2 id="第7章">第7章</h2>
+<p><strong>搜索：</strong></p>
+<p>折半搜索原理及适用条件</p>
+<p>304</p>
+<p>二叉判定树的结构</p>
+<p>：本质是二叉排序树，中序遍历是有序的，二叉判定树的节点是下标或位置</p>
+<p>二叉排序树的创建和删除</p>
+<p>311</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gylic/p/13150961.html">数据结构第七章笔记</a></p>
+<h2 id="第8章">第8章</h2>
+<p><strong>图(掌握原理)：</strong></p>
+<p>图的存储结构、</p>
+<p>邻接矩阵、邻接表，逆邻接表。357</p>
+<p>深度和广度序列</p>
+<p>364-365</p>
+<p>图(强)连通，(强)连通分量</p>
+<p>367</p>
+<p>最小生成树算法</p>
+<p>kruskal先找分边、prim顺路贪心。371、373</p>
+<p>最短路径和最短路径长度</p>
+<p>dijkstra 绕弯贪心376</p>
+<p>拓扑排序</p>
+<p>384</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gylic/p/13150985.html">数据结构第八章笔记</a></p>
+<h2 id="第9章">第9章</h2>
+<p><strong>排序算法(掌握原理)</strong></p>
+<p>直接插入、折半插入、希尔排序、冒泡、快排(重点)、简单选择、堆排序。</p>
+<p>有一道经典例题。</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gylic/p/13151060.html">数据结构第九章笔记</a></p>
+
       
     </div>
 
