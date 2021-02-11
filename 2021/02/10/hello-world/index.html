@@ -112,8 +112,6 @@
       <h1 class="site-title">繁辰一梦</h1>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">一分从师得，一分因友得，一分自思维，一分待时熟。</p>
-      <img class="custom-logo-image" src="/uploads/favicon1.jpg" alt="繁辰一梦">
   </div>
 
   <div class="site-nav-right">
@@ -132,7 +130,6 @@
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
         <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
         <li class="menu-item menu-item-friendlink"><a href="/friendlink/" rel="section"><i class="fa fa-globe fa-fw"></i>友链</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
   </ul>
 </nav>
 
@@ -172,7 +169,7 @@
     <img class="site-author-image" itemprop="image" alt="gylic"
       src="/uploads/avatar1.png">
   <p class="site-author-name" itemprop="name">gylic</p>
-  <div class="site-description" itemprop="description">找不到我</div>
+  <div class="site-description" itemprop="description">一分从师得，一分因友得，一分自思维，一分待时熟。</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
@@ -243,7 +240,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar1.png">
       <meta itemprop="name" content="gylic">
-      <meta itemprop="description" content="找不到我">
+      <meta itemprop="description" content="一分从师得，一分因友得，一分自思维，一分待时熟。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -343,6 +340,7 @@
 
 
 
+    <div class="comments gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -418,6 +416,26 @@
 
   
 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments('.gitalk-container', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a48931828855c54b4bc4# GitHub Application Client ID',
+      clientSecret: 'f4dde2bfac1efe086b62835135b05748c72b45f9# GitHub Application Client Secret',
+      repo        : 'gylic.github.io# Repository name to store issues',
+      owner       : 'gylic# GitHub repo owner',
+      admin       : ['gylic# GitHub repo owner and collaborators, only these guys can initialize gitHub issues'],
+      id          : '0d9b3632d81eb73dbe76bd76c4a2112d',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render(document.querySelector('.gitalk-container'));
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
