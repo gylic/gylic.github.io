@@ -37,7 +37,7 @@
 <link rel="canonical" href="https://gylic.github.io/archives/2021/02/">
 
 
-<script data-pjax class="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -111,6 +111,7 @@
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">一分从师得，一分因友得，一分自思维，一分待时熟。</p>
+      <img class="custom-logo-image" src="/uploads/favicon1.jpg" alt="繁辰一梦">
   </div>
 
   <div class="site-nav-right">
@@ -128,6 +129,8 @@
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
         <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-friendlink"><a href="/friendlink/" rel="section"><i class="fa fa-globe fa-fw"></i>友链</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
   </ul>
 </nav>
 
@@ -183,26 +186,25 @@
       <span class="links-of-author-item">
         <a href="https://github.com/gylic" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gylic" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/gylic/" title="BlogGarden → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;gylic&#x2F;" rel="noopener" target="_blank"><i class="fab fa-user-circle-o fa-fw"></i>BlogGarden</a>
+      </span>
   </div>
 
 
   <div class="links-of-blogroll site-overview-item animated">
     <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      友情链接
+      一些链接
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://cqjjfc.blog.csdn.net/" title="https:&#x2F;&#x2F;cqjjfc.blog.csdn.net" rel="noopener" target="_blank">我叫方程</a>
+          <a href="https://www.cnblogs.com/gylic" title="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;gylic" rel="noopener" target="_blank">博客园</a>
         </li>
     </ul>
   </div>
 
         </div>
       </div>
-        <div class="back-to-top animated" role="button">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
     </div>
   </aside>
   <div class="sidebar-dimmer"></div>
@@ -211,6 +213,10 @@
     </header>
 
     
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
   <div class="reading-progress-bar"></div>
 
 <noscript>
@@ -267,7 +273,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/2021/02/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">未命名</span>
+            <span itemprop="name">数据结构复习</span>
           </a>
       </div>
 
@@ -341,41 +347,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '.page-configurations',
-    '.main-inner',
-    '.post-toc-wrap',
-    '.languages',
-    '.pjax'
-  ],
-  analytics: false,
-  cacheBust: false,
-  scrollRestoration: false,
-  scrollTo: !CONFIG.bookmark.enable
-});
-
-document.addEventListener('pjax:success', () => {
-  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  const hasTOC = document.querySelector('.post-toc');
-  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
-  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -388,11 +360,9 @@ document.addEventListener('pjax:success', () => {
 
 
 
-    <div class="pjax">
 
   
 
 
-    </div>
 </body>
 </html>
