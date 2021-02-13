@@ -188,12 +188,16 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
         <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -301,7 +305,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.7k</span>
+      <span>2.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -370,7 +374,7 @@
 <p><strong>一维数组求地址</strong></p>
 <p><img src="https://img2020.cnblogs.com/blog/2023220/202006/2023220-20200619195041797-1722663588.png" /></p>
 <p><img src="https://img2020.cnblogs.com/blog/2023220/202006/2023220-20200619195051213-2137226933.png" /></p>
-<p>递推式 <span class="math inline">\(LOC ( i ) = LOC ( i -1 ) + l =α+ i*l\)</span></p>
+<p>递推式 <span class="math inline">\(\begin{equation} LOC ( i ) = LOC ( i -1 ) + l =α+ i*l\end{equation}\)</span></p>
 <p><strong>二维数组求地址</strong></p>
 <p>n行m列的二维数组：</p>
 <p><img src="https://img2020.cnblogs.com/blog/2023220/202006/2023220-20200619195142158-1259005485.png" /></p>
@@ -378,12 +382,12 @@
 <p><strong>n维数组</strong></p>
 <p>各维元素个数为 <span class="math inline">\(m_1\)</span>, <span class="math inline">\(m_2\)</span>, <span class="math inline">\(m_3\)</span>, …, <span class="math inline">\(m_n\)</span></p>
 <p>下标为 <span class="math inline">\(i_1\)</span>, <span class="math inline">\(i_2\)</span>, <span class="math inline">\(i_3\)</span>, …, <span class="math inline">\(i_n\)</span> 的数组元素的存储地址： <span class="math display">\[
-LOC ( i_1, i_2, …, i_n ) =a + ( i_1* m_2* m_3* …* m_n + i_2* m_3* m_4* …* m_n+……+ i_{n-1}*m_n + i_n ) * l 
-=a+(  \sum_{j=1}^{n-1}i_j *\prod_{k=j+1}^{n}m_k+i_n) *l
+\begin{align}
+&amp;LOC ( i_1, i_2, …, i_n )\\
+&amp;= a + ( i_1* m_2* m_3* …* m_n + i_2* m_3* m_4* …* m_n+……+ i_{n-1}*m_n + i_n ) * l \\
+&amp;= a+(\sum_{j=1}^{n-1}i_j *\prod_{k=j+1}^{n}m_k+i_n) *l
+\end{align}
 \]</span></p>
-<p><span class="math inline">\(LOC\)</span> ( <span class="math inline">\(i_1\)</span>, <span class="math inline">\(i_2\)</span>, …, <span class="math inline">\(i_n\)</span> ) = a +</p>
-<p>( <span class="math inline">\(i_1\)</span>* <span class="math inline">\(m_2\)</span>* <span class="math inline">\(m_3\)</span>* …* <span class="math inline">\(m_n\)</span> + <span class="math inline">\(i_2\)</span>* <span class="math inline">\(m_3\)</span>* <span class="math inline">\(m_4\)</span>* …* <span class="math inline">\(m_n\)</span>+……+ <span class="math inline">\(i_{n-1}\)</span><em><span class="math inline">\(m_n\)</span> + <span class="math inline">\(i_n\)</span> ) </em> l</p>
-<p>=a+( <span class="math inline">\(\sum_{j=1}^{n-1}\)</span><span class="math inline">\(i_j\)</span> <em><span class="math inline">\(\prod_{k=j+1}^{n}\)</span><span class="math inline">\(m_k\)</span>+<span class="math inline">\(i_n\)</span>) </em>l</p>
 <p>例题：</p>
 <p>有6行8列的二维数组A，每个元素用相邻的6个字节存储，存储器按字节编址，已知A的起始存储地址（基址）为1000，在行优先存储和列优先存贮情况下A[5,5]的存储地址分别为 1270 , 1210 。</p>
 <h2 id="第5章">★第5章</h2>
@@ -539,7 +543,38 @@ LOC ( i_1, i_2, …, i_n ) =a + ( i_1* m_2* m_3* …* m_n + i_2* m_3* m_4* …* 
 
 
 
-  
+  <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
