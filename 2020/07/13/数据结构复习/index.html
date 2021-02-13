@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"gylic.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"gylic.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 <meta name="description" content="这是显示在首页的概述，正文内容均会被隐藏。">
 <meta property="og:type" content="article">
@@ -123,6 +123,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -137,11 +138,37 @@
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
         <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
         <li class="menu-item menu-item-friendlink"><a href="/friendlink/" rel="section"><i class="fa fa-globe fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
         
@@ -167,7 +194,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%AB%A0"><span class="nav-number">1.</span> <span class="nav-text">第1章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC23%E7%AB%A0"><span class="nav-number">2.</span> <span class="nav-text">第2、3章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC4%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">第4章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC5%E7%AB%A0"><span class="nav-number">4.</span> <span class="nav-text">★第5章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC6%E7%AB%A0"><span class="nav-number">5.</span> <span class="nav-text">第6章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC7%E7%AB%A0"><span class="nav-number">6.</span> <span class="nav-text">第7章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC8%E7%AB%A0"><span class="nav-number">7.</span> <span class="nav-text">第8章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC9%E7%AB%A0"><span class="nav-number">8.</span> <span class="nav-text">第9章</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%AB%A0"><span class="nav-text">第1章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC23%E7%AB%A0"><span class="nav-text">第2、3章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC4%E7%AB%A0"><span class="nav-text">第4章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC5%E7%AB%A0"><span class="nav-text">第5章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC6%E7%AB%A0"><span class="nav-text">第6章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC7%E7%AB%A0"><span class="nav-text">第7章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC8%E7%AB%A0"><span class="nav-text">第8章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC9%E7%AB%A0"><span class="nav-text">第9章</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -305,7 +332,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.6k</span>
+      <span>2.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -340,15 +367,38 @@
 <p>• 加法准则(并列程序段 )<br />
 前提：<span class="math inline">\(T_1\)</span>(m) = O(f(m)); <span class="math inline">\(T_2\)</span>(n) = O(g(n))<br />
 结论：<span class="math inline">\(T\)</span>(n)= <span class="math inline">\(T_1\)</span>+<span class="math inline">\(T_2\)</span> = O(f(n)+g(n))<br />
-<span class="math inline">\(T\)</span>(n) = <span class="math inline">\(T_1\)</span>+<span class="math inline">\(T_2\)</span> = O(max(f(m),g(n))) • 乘法准则(嵌套程序段)<br />
+<span class="math inline">\(T\)</span>(n) = <span class="math inline">\(T_1\)</span>+<span class="math inline">\(T_2\)</span> = O(max(f(m),g(n)))</p>
+<p>• 乘法准则(嵌套程序段)<br />
 前提：<span class="math inline">\(T_1\)</span>(n) = O(f(n)); <span class="math inline">\(T_2\)</span>(n) = O(g(n))<br />
 结论：<span class="math inline">\(T\)</span>(n) = <span class="math inline">\(T_1\)</span>* <span class="math inline">\(T_2\)</span> = O(f(n)*g(n))</p>
 <p><strong>常见函数的增长率</strong></p>
 <p><img src="https://img2020.cnblogs.com/blog/2023220/202006/2023220-20200619194940245-829728112.png" /></p>
 <p><strong>例1</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exam</span> <span class="params">( <span class="keyword">float</span> x[ ][ ], <span class="keyword">int</span> m, <span class="keyword">int</span> n )</span> </span>&#123;      </span><br><span class="line">  <span class="keyword">float</span> sum [ ];      </span><br><span class="line">  <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++ ) &#123; <span class="comment">//x中各行          </span></span><br><span class="line">     sum[i] = <span class="number">0.0</span>; <span class="comment">//数据累加          </span></span><br><span class="line">     <span class="keyword">for</span> ( <span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++ )       </span><br><span class="line">         sum[i] += x[i][j];      </span><br><span class="line">  &#125;      </span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; m; i++ )  <span class="comment">//打印各行数据和          </span></span><br><span class="line">     <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; “ : ” &lt;&lt;sum [i] &lt;&lt; <span class="built_in">endl</span>;  </span><br><span class="line">&#125;         </span><br><span class="line"><span class="comment">//渐进时间复杂度为 O(max (m*n, m))</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void exam ( float x[ ][ ], int m, int n ) &#123;      
+  float sum [ ];      
+  for ( int i &#x3D; 0; i &lt; m; i++ ) &#123; &#x2F;&#x2F;x中各行          
+     sum[i] &#x3D; 0.0; &#x2F;&#x2F;数据累加          
+     for ( int j &#x3D; 0; j &lt; n; j++ )       
+         sum[i] +&#x3D; x[i][j];      
+  &#125;      
+  for ( i &#x3D; 0; i &lt; m; i++ )  &#x2F;&#x2F;打印各行数据和          
+     cout &lt;&lt; i &lt;&lt; “ : ” &lt;&lt;sum [i] &lt;&lt; endl;  
+&#125;         
+&#x2F;&#x2F;渐进时间复杂度为 O(max (m*n, m))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>例2</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n )</span> </span>&#123; </span><br><span class="line"><span class="comment">//用冒泡排序方法，将a 中n个整数的序列排列成自小至大有序的整数序列。  </span></span><br><span class="line">    <span class="keyword">int</span> change ,i; </span><br><span class="line">    <span class="keyword">for</span> (i = n<span class="number">-1</span>,change=<span class="number">1</span>; i &gt;=<span class="number">1</span>&amp;&amp;change; - -i )&#123;     </span><br><span class="line">        change= <span class="number">0</span>;    </span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j&lt;i; ++j )     </span><br><span class="line">        <span class="keyword">if</span> (a [j] &gt;a[ j+<span class="number">1</span>]) &#123;           </span><br><span class="line">           a [j]&lt;-&gt;a[ j+ <span class="number">1</span>]                     </span><br><span class="line">           change=<span class="number">1</span>;&#125;         </span><br><span class="line">               &#125; </span><br><span class="line">&#125;<span class="comment">// bubble_sort</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//基本操作：赋值操作。时间复杂度：O(n^2)--最坏情况下时间复杂度 </span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void bubble_sort(int a[], int n ) &#123; 
+&#x2F;&#x2F;用冒泡排序方法，将a 中n个整数的序列排列成自小至大有序的整数序列。  
+    int change ,i; 
+    for (i &#x3D; n-1,change&#x3D;1; i &gt;&#x3D;1&amp;&amp;change; - -i )&#123;     
+        change&#x3D; 0;    
+        for (j &#x3D; 0; j&lt;i; ++j )     
+        if (a [j] &gt;a[ j+1]) &#123;           
+           a [j]&lt;-&gt;a[ j+ 1]                     
+           change&#x3D;1;&#125;         
+               &#125; 
+&#125;&#x2F;&#x2F; bubble_sort
+
+&#x2F;&#x2F;基本操作：赋值操作。时间复杂度：O(n^2)--最坏情况下时间复杂度 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>BubbleSort n-1趟 BubbleExchange ( ) n-i次比较</p>
 <p>当输入的数据已经排好序， 只要比较n-1次， 当输入的数据是减序，需要 比较n(n-1)/2次。</p>
 <p><strong>递归时间复杂度分析</strong>、</p>
@@ -383,14 +433,14 @@
 <p>各维元素个数为 <span class="math inline">\(m_1\)</span>, <span class="math inline">\(m_2\)</span>, <span class="math inline">\(m_3\)</span>, …, <span class="math inline">\(m_n\)</span></p>
 <p>下标为 <span class="math inline">\(i_1\)</span>, <span class="math inline">\(i_2\)</span>, <span class="math inline">\(i_3\)</span>, …, <span class="math inline">\(i_n\)</span> 的数组元素的存储地址： <span class="math display">\[
 \begin{align}
-&amp;LOC ( i_1, i_2, …, i_n )\\
-&amp;= a + ( i_1* m_2* m_3* …* m_n + i_2* m_3* m_4* …* m_n+……+ i_{n-1}*m_n + i_n ) * l \\
-&amp;= a+(\sum_{j=1}^{n-1}i_j *\prod_{k=j+1}^{n}m_k+i_n) *l
+&amp;LOC ( i_1, i_2, …, i_n )\nonumber\\
+&amp;= a + ( i_1* m_2* m_3* …* m_n + i_2* m_3* m_4* …* m_n+……+ i_{n-1}*m_n + i_n ) * l \nonumber\\
+&amp;= a+(\sum_{j=1}^{n-1}i_j *\prod_{k=j+1}^{n}m_k+i_n) *l\nonumber
 \end{align}
 \]</span></p>
 <p>例题：</p>
 <p>有6行8列的二维数组A，每个元素用相邻的6个字节存储，存储器按字节编址，已知A的起始存储地址（基址）为1000，在行优先存储和列优先存贮情况下A[5,5]的存储地址分别为 1270 , 1210 。</p>
-<h2 id="第5章">★第5章</h2>
+<h2 id="第5章"><strong>第5章</strong></h2>
 <p><strong>树（要求代码）：</strong></p>
 <p>树的特性(知道其推导过程) 树的遍历(深度和层次遍历及其应用)</p>
 <p>199递归遍历；205层次遍历用到队列。</p>
@@ -532,6 +582,7 @@
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
+<script src="/js/local-search.js"></script>
 
 
 
