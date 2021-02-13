@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gylic.github.io/about/index.html</loc>
+    <loc>https://gylic.github.io/2020/05/23/%E7%BA%BF%E6%80%A7%E8%A1%A8%E4%BD%9C%E4%B8%9A/</loc>
     
     <lastmod>2021-02-13</lastmod>
     
@@ -25,14 +25,14 @@
   <url>
     <loc>https://gylic.github.io/friendlink/index.html</loc>
     
-    <lastmod>2021-02-11</lastmod>
+    <lastmod>2021-02-13</lastmod>
     
   </url>
   
   <url>
-    <loc>https://gylic.github.io/2021/02/10/hello-world/</loc>
+    <loc>https://gylic.github.io/about/index.html</loc>
     
-    <lastmod>2021-02-11</lastmod>
+    <lastmod>2021-02-13</lastmod>
     
   </url>
   
@@ -40,6 +40,13 @@
     <loc>https://gylic.github.io/2020/07/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/</loc>
     
     <lastmod>2021-02-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gylic.github.io/2020/01/01/hello-world/</loc>
+    
+    <lastmod>2019-12-31</lastmod>
     
   </url>
   

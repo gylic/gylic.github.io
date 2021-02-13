@@ -2,25 +2,25 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2021/02/10/hello-world/</url>
+    <url>/2020/01/01/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<a id="more"></a></p>
 <h2 id="quick-start">Quick Start</h2>
 <h3 id="create-a-new-post">Create a new post</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;</code></pre>
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="run-server">Run server</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server</code></pre>
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
 <h3 id="generate-static-files">Generate static files</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate</code></pre>
 <p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
 <h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy</code></pre>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
-    <title>数据结构复习</title>
+    <title>数据结构笔记</title>
     <url>/2020/07/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<p>[toc]</p>
 <p><strong>题型：</strong> 分析题30 简答题40 应用题30 (写程序10分) .</p>
@@ -55,7 +55,7 @@
   for ( i &#x3D; 0; i &lt; m; i++ )  &#x2F;&#x2F;打印各行数据和          
      cout &lt;&lt; i &lt;&lt; “ : ” &lt;&lt;sum [i] &lt;&lt; endl;  
 &#125;         
-&#x2F;&#x2F;渐进时间复杂度为 O(max (m*n, m))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#x2F;&#x2F;渐进时间复杂度为 O(max (m*n, m))</code></pre>
 <p><strong>例2</strong></p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void bubble_sort(int a[], int n ) &#123; 
 &#x2F;&#x2F;用冒泡排序方法，将a 中n个整数的序列排列成自小至大有序的整数序列。  
@@ -69,7 +69,7 @@
                &#125; 
 &#125;&#x2F;&#x2F; bubble_sort
 
-&#x2F;&#x2F;基本操作：赋值操作。时间复杂度：O(n^2)--最坏情况下时间复杂度 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#x2F;&#x2F;基本操作：赋值操作。时间复杂度：O(n^2)--最坏情况下时间复杂度 </code></pre>
 <p>BubbleSort n-1趟 BubbleExchange ( ) n-i次比较</p>
 <p>当输入的数据已经排好序， 只要比较n-1次， 当输入的数据是减序，需要 比较n(n-1)/2次。</p>
 <p><strong>递归时间复杂度分析</strong>、</p>
@@ -163,5 +163,261 @@
       <tags>
         <tag>数据结构</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>线性表的两个应用</title>
+    <url>/2020/05/23/%E7%BA%BF%E6%80%A7%E8%A1%A8%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<h2 id="一约瑟夫问题">一、约瑟夫问题</h2>
+<h3 id="作业题">1.1 作业题</h3>
+<p><strong>问题描述：</strong>n 个人围成一个圆圈，从第s个人开始顺时针报数, 报到m 的人出列。然后再从下一 个人开始，从 1 顺时针报数，报到m 的人出列，…，如此下去直到这些人全部出列。</p>
+<p><strong>用到：</strong>单向循环链表。</p>
+<p><strong>代码如下：</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"> #include &lt;iostream&gt;
+ using namespace std;
+ struct Node &#123;
+    int data;
+    Node *link;
+    Node (int d&#x3D;0,Node *next&#x3D;NULL ):data(d), link(next) &#123; &#125;;
+ &#125;;
+ 
+class Josephus &#123;	
+ private: 	
+     Node *first;&#x2F;&#x2F;循环链表的头节点
+     int    n;     &#x2F;&#x2F;链表节点个数
+     int    s;     &#x2F;&#x2F;第一个报数人的序号
+     int    m;     &#x2F;&#x2F;报数出局的数
+ 
+ public:	
+ 	void createList();
+    void outputList();
+    Josephus(int N, int S, int M):n(N),s(S),m(M)
+    &#123;
+        createList();
+        outputList();
+    &#125;
+ 
+ &#125;;
+ 
+ void Josephus::createList()
+ &#123;
+     Node *pre &#x3D; NULL;
+     Node *cur &#x3D; NULL;
+     Node *p &#x3D; new Node(1);
+     first &#x3D; p;
+     cur &#x3D; p;
+    for (int i&#x3D;2; i&lt;&#x3D;n; i++)
+    &#123;
+         p &#x3D; new Node(i);
+         pre &#x3D; cur;
+         cur &#x3D; p;
+		 pre-&gt;link &#x3D; cur;
+    &#125;
+    cur-&gt;link &#x3D; first;    
+    
+ &#125;
+ 
+ void Josephus::outputList()
+ &#123;
+     Node *pre &#x3D; NULL;
+     Node *cur &#x3D; first;
+     s--;
+     while (s--)            &#x2F;&#x2F;寻找第K个人（开始报数的人）
+     &#123;
+        pre &#x3D; cur;
+        cur &#x3D; cur-&gt;link;
+     &#125;
+     while (n--)            &#x2F;&#x2F;输出链表中所有的结点值
+     &#123;
+        int y &#x3D; m-1;
+        while (y--)            &#x2F;&#x2F;寻找报m的人
+        &#123;
+            pre &#x3D; cur;
+            cur &#x3D; cur-&gt;link;
+        &#125;
+        Node *p &#x3D; cur;
+        cout &lt;&lt; p-&gt;data &lt;&lt; &quot;,&quot;;
+        cur &#x3D; cur-&gt;link;    &#x2F;&#x2F;删除节点的过程
+        pre-&gt;link &#x3D; cur;
+        delete p;
+        p&#x3D;NULL;
+     &#125;
+ &#125;
+ 
+ int main()
+ &#123;
+ 	int n,s,m;
+ 	cout&lt;&lt;&quot;请输入n、s、m:&quot; &lt;&lt;endl;
+    cin&gt;&gt;n&gt;&gt;s&gt;&gt;m;
+	cout&lt;&lt;&quot;出局顺序:&quot;&lt;&lt;endl; 
+    Josephus clist(n,s,m);
+    return 0;
+&#125;</code></pre>
+<h3 id="相似问题其一">1.2 相似问题其一</h3>
+<p><strong>问题描述：</strong>有n个人围成一圈，顺序排号。从第一个人开始报数（从1到3报数），凡是报到3的人退出圈子，问最后留下的是原来的几号。</p>
+<p><strong>用到：</strong>数组。</p>
+<p><strong>以下是书上给出的代码：</strong>不过我没能运行成功。原因：杀毒软件说它是病毒然后给我拦截了。😂</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+#define nmax 50
+using namespace std;
+int main()
+ &#123;
+	int i,k,m,n,num[nmax],*p;
+	cout&lt;&lt;&quot;please input the total of numbers:&quot;;
+	cin&gt;&gt;n;
+	p&#x3D;num;
+	
+	for(i&#x3D;0;i&lt;n;i++)
+	*(p+i)&#x3D;i+1;
+	
+	i&#x3D;0;&#x2F;&#x2F;累计参与游戏的人员位置
+	k&#x3D;0;&#x2F;&#x2F;累计报数值
+	m&#x3D;0;&#x2F;&#x2F;累计退出的人数
+	
+	while(m&lt;n-1) 
+  &#123; 
+		
+    if(*(p+i)!&#x3D;0)k++;
+    if(k&#x3D;&#x3D;3)
+	&#123;
+	*(p+i)&#x3D;0;
+	k&#x3D;0;&#x2F;&#x2F;报数值回归0
+    m++;&#x2F;&#x2F;累加退出的人数 
+    &#125;
+      i++;
+      if(i&#x3D;&#x3D;n)i&#x3D;0;	&#x2F;&#x2F;当到达最后一个人时赋值回到0，保证形成环状
+  &#125;
+    while(*p&#x3D;&#x3D;0)p++;
+    cout&lt;&lt;*p&lt;&lt;&quot;is left&quot;&lt;&lt;endl;
+    return 0;
+ &#125; 
+ &#x2F;*运行结果如下：
+ please input the total of numbers:23
+ 8 is left*&#x2F; </code></pre>
+<h3 id="相似问题其二">1.3 相似问题其二</h3>
+<p><strong>问题描述：</strong>n个人轮流报数，报到number的人出局，剩下的成环继续轮流报数，问最后剩下的是谁？（设此处n=12,number=3）</p>
+<p><strong>用到：</strong>Vector类的函数： push back() 在向量尾部加入一个元素 at() 获取对应索引的元素(也可使用 [] 访问) size() 获取当前vector内的元素个数 begin() 返回向量头的迭代器 erase() 删除对应迭代器对应的元素 删除当前向量中的第i个元素写法为: erase(v.begin()+i ) 迭代器此处不深入讲解，知道如何删除第1个元素即可。</p>
+<p><strong>分析:</strong></p>
+<p>n个人——向量初始容量为n</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;int&gt; v;&#x2F;&#x2F;创建一个向量容器
+const int n&#x3D;12;
+const int number&#x3D;3;</code></pre>
+<p>number——每次跳跃距离</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;设i是计算好的下标
+&#x2F;&#x2F;可以准确地删除已出局的人
+v.erase(v.begin()+i);</code></pre>
+<p>剩下的成环——取余成环</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">i&#x3D;(i+number-1)%v.size();</code></pre>
+<p><strong>代码如下（来自本校某大佬）</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+int main()
+&#123;
+	vector&lt;int&gt; v;&#x2F;&#x2F;创建一个向量容器
+	const int n&#x3D;12;
+	const int number&#x3D;3;
+	for(int i&#x3D;1;i&lt;&#x3D;n;i++)&#123;
+	v.push_back(i);&#x2F;&#x2F;循环初始，给玩家编号	
+	&#125; 
+	int i&#x3D;0;
+	while(v.size()!&#x3D;1) &#123;&#x2F;&#x2F;当只剩下一个人的时候结束 
+	i&#x3D;(i+number-1)%v.size();&#x2F;&#x2F;取余成环，计算下一个出局的人的位置	
+	v.erase(v.begin()+i);&#x2F;&#x2F;剔除出局的人		
+	&#125;
+	cout&lt;&lt;v[0]&lt;&lt;endl;&#x2F;&#x2F;获得最后一个人 
+	return 0; 
+&#125;</code></pre>
+<h2 id="二单向链表逆序">二、单向链表逆序</h2>
+<p><strong>问题描述：</strong>设有一个表头指针为h的单链表。试设计一个算法，通过遍历一趟链表，将链表中所有结点的链接方向逆转。要求逆转结果链表的表头指针h指向原链表的最后一个结点。</p>
+<p><strong>用到：</strong>单向链表</p>
+<p><strong>代码如下：</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+ 
+struct List
+&#123;
+	int   data;
+	List *next;
+&#125;;
+ 
+List* createList(int n)       &#x2F;&#x2F;创建含有n个节点的单链表
+&#123;
+	List *head, *p, *cur;
+	cur&#x3D;head &#x3D; NULL;   &#x2F;&#x2F;初始化表头和中间指针
+	int i;
+	for (i &#x3D; n; i &gt; 0; --i)
+	&#123;
+		p &#x3D; new List;     &#x2F;&#x2F;申请空间，创建第一个节点
+		cin &gt;&gt; p-&gt;data;      &#x2F;&#x2F;往节点中存入数据信息
+		if (head &#x3D;&#x3D; NULL)
+		&#123;
+			head &#x3D; p;
+		&#125;
+		else
+		&#123;
+			cur-&gt;next &#x3D; p;
+		&#125;
+		cur &#x3D; p;
+	&#125;
+	cur-&gt;next &#x3D; NULL;
+	return head;
+&#125;
+ 
+List *ReverseList(List *head)          &#x2F;&#x2F;逆置单链表
+&#123;
+	List *p, *r;       &#x2F;&#x2F;定义两个中间节点，用于顺移逆置链表节点
+	if (head-&gt;next &#x3D;&#x3D; NULL)
+		return head;
+	p &#x3D; head;          &#x2F;&#x2F;获取头节点地址
+	r &#x3D; p-&gt;next;       &#x2F;&#x2F;获取链表第二个节点地址
+	p-&gt;next &#x3D; NULL;    &#x2F;&#x2F;头节点变为尾节点，原链表表头指向空
+	while (r)
+	&#123;
+		p &#x3D; r;
+		r &#x3D; r-&gt;next;
+		p -&gt;next &#x3D; head;   &#x2F;&#x2F;使第二个节点指向原先的头节点
+		head &#x3D; p;          &#x2F;&#x2F;使第二个节点变为头节点，用于循环逆置
+	&#125;
+	return head;
+&#125;
+ 
+void print(List *head)        &#x2F;&#x2F;输出逆置后的单链表
+&#123;
+	List *p;
+	p &#x3D; head;
+	while (p)
+	&#123;
+		cout&lt;&lt;p-&gt;data;
+		p &#x3D; p-&gt;next;
+		cout &lt;&lt; &quot; &quot;;
+	&#125;
+	cout &lt;&lt; endl;
+&#125;
+int main()
+&#123;
+	List *p, *q;
+	cout &lt;&lt; &quot;请输入单链表的节点个数：&quot;;
+	int n;
+	cin &gt;&gt; n;
+	cout &lt;&lt; endl;
+	cout &lt;&lt; &quot;创建一个节点为&quot; &lt;&lt; n &lt;&lt; &quot;的单链表&quot; &lt;&lt; endl;
+	p &#x3D; createList(n);
+	cout &lt;&lt; endl;
+	cout &lt;&lt; &quot;这步为程序逆置单链表&quot; &lt;&lt; endl;
+	q &#x3D; ReverseList(p);
+	cout &lt;&lt; endl;
+	cout &lt;&lt; &quot;打印逆置后的单链表&quot; &lt;&lt; endl;
+	print(q);
+	cout &lt;&lt; endl;
+	return 0;
+&#125;
+&#x2F;*说明：
+输入要求：先输入要创建的节点个数。再分别输入各节点的数据域。
+输出：逆序后的各节点的数据域。*&#x2F;
+</code></pre>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
   </entry>
 </search>
